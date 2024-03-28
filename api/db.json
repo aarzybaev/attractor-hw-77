@@ -1,0 +1,26 @@
+[
+  {
+    "id": "bc375136-aa0b-432f-914d-46b3eb6438b3",
+    "author": "admin",
+    "message": "message",
+    "image": null
+  },
+  {
+    "id": "d8f7c0b6-475b-4035-8931-8e392e4902d7",
+    "author": "editor",
+    "message": "message",
+    "image": null
+  },
+  {
+    "id": "7c94cc18-d6eb-44ee-9ee4-f86612252308",
+    "author": "editor",
+    "message": "message",
+    "image": null
+  },
+  {
+    "id": "b1358e7b-d380-4500-a600-c45fa880b29a",
+    "author": null,
+    "message": "new message",
+    "image": null
+  }
+]
