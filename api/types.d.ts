@@ -1,4 +1,3 @@
-import Messages from "./routers/messages";
 
 export interface Message {
     id: string;
