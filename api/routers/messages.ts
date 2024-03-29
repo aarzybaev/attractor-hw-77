@@ -17,12 +17,11 @@ messagesRouter.post('', imagesUpload.single('image'), async (req, res) => {
 
     if (message.trim()) {
         const messageData: MessageWithoutId = {
-            author: author.trim() ? author : null,
+            author: author.trim() ? author : 'Anonymous',
             message,
             image: req.file ? req.file.filename : null,
         };
-        const messageItem = await fileDb.addItem(messageData);
-        return res.json(messageItem);
+        await fileDb.addItem(messageData);
     } else {
         return res.status(404).json({"error": "Message must be present in the request"});
     }
