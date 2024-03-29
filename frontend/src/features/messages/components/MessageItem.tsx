@@ -11,7 +11,7 @@ const MessageItem: React.FC<Props> = ({item}) => {
 
   return (
   <Grid item xs>
-    <Card sx={{ maxWidth: 500 }}>
+    <Card>
       <CardHeader
         title={"Author: " + item.author}
         subheader={dayjs(item.createdAt).format('DD/MM/YYYY HH:mm')}
@@ -21,6 +21,7 @@ const MessageItem: React.FC<Props> = ({item}) => {
         height="194"
         image={apiURL + '/' + item.image}
         alt={item.author}
+        sx={{ maxWidth: 500 }}
       />}
       <CardContent>
         <Typography variant="body2" color="text.secondary">

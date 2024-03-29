@@ -60,6 +60,8 @@ const MessageForm: React.FC<Props> = ({onSubmit, Loading}) => {
             value={state.message}
             onChange={inputChangeHandler}
             name="message"
+            multiline={true}
+            rows={3}
             required
           />
         </Grid>

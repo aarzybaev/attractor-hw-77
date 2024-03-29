@@ -6,7 +6,7 @@ import { createMessage, fetchMessages } from './messagesThunks.ts';
 import { useEffect, useState } from 'react';
 import { selectMessages, selectMessagesCreating, selectMessagesFetching } from './messagesSlice.ts';
 import MessageItem from './components/MessageItem.tsx';
-import dayjs from 'dayjs';
+
 const Messages = () => {
   const [messagesState, setMessagesState] = useState<MessageWithID[]>([]);
   const dispatch = useAppDispatch();
@@ -24,19 +24,13 @@ const Messages = () => {
 
   useEffect(() => {
     if(messages) {
-      setMessagesState(prevState => {
-          const newArr = [...prevState, ...messages];
-          return newArr.sort((a, b) =>
-          dayjs(b.createdAt).unix() - dayjs(a.createdAt).unix());
-      });
+        setMessagesState(messages);
     }
   }, [messages]);
 
   const progress = (<Box sx={{ width: '100%' }}>
-    <LinearProgress />
-  </Box>);
-
-
+                                  <LinearProgress/>
+                                </Box>);
 
 
   return fetchLoading ? progress : (
