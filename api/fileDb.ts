@@ -29,7 +29,8 @@ const fileDb = {
       createdAt: new Date().toISOString(),
     };
     data.push(message);
-    await this.save();
+     await this.save();
+     return message;
   },
   async save() {
     await fs.writeFile(filename, JSON.stringify(data, null, 2));

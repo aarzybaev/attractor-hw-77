@@ -24,7 +24,8 @@ messagesRouter.post('', imagesUpload.single('image'), async (req, res) => {
             message,
             image: req.file ? req.file.filename : null,
         };
-        await fileDb.addItem(messageData);
+        const item = await fileDb.addItem(messageData);
+        return res.json(item);
     } else {
         return res.status(404).json({"error": "Message must be present in the request"});
     }

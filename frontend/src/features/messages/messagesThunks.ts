@@ -10,7 +10,7 @@ export const fetchMessages = createAsyncThunk<MessageWithID[]>(
 );
 export const createMessage = createAsyncThunk<void, MessageMutation>(
   'messages/create',
-  async (messagesMutation) => {
+   async ( messagesMutation) => {
     const formData = new FormData();
     const keys = Object.keys(messagesMutation) as (keyof MessageMutation)[];
 
@@ -19,11 +19,10 @@ export const createMessage = createAsyncThunk<void, MessageMutation>(
       if (value !== null) {
         formData.append(key, value);
       }
-
     });
 
     try {
-      void axiosApi.post('/messages', formData);
+       await axiosApi.post('/messages', formData);
     } catch (e) {
       console.error(e);
     }
